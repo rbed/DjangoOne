@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+Detale ksiazek:
+<a href="{% url 'shelf: book-detail' %}">Powrót do listy ksiazek</a>
+
+Book: {{ object.title }} {{ object.author }}
+
+
+{% endblock %}

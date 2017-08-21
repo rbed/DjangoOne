@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+Lista wydawców:
+
+<ul>
+{% for publisher in object_list %}
+	<li> <a href="{% url 'shelf:publisher-detail' publisher.id %}">{{ publisher.name }}</a></li>
+	{% endfor %}
+
+</ul>
+
+{% endblock %}

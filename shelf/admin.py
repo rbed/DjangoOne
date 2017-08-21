@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # I - z modeli importujemy obiekty jakie stworzylismy
-from .models import Author, Publisher, Book
+from .models import Author, Publisher, Book, BookItem, BookEdition, BookCategory
 
 # I - dodajemy obiekty do admina (pole zlikwidowane poniewaz wszystkie klasy zarejestrowalismy osobno w kolejnych krokach, wszystko opisane ponizej)
 
@@ -22,7 +22,7 @@ admin.site.register(Author, AuthorAdmin)
 # 1- robimy klase BookAdmin
 class BookAdmin(admin.ModelAdmin):
     search_fields = ['title']
-    list_display = ['title', 'author', 'isbn', 'publisher']
+    list_display = ['title']
 # 2- rejestrujemy klase
 admin.site.register(Book, BookAdmin)
 
@@ -33,3 +33,17 @@ class PublisherAdmin(admin.ModelAdmin):
     pass
 # 2 - rejestrujemy klase
 admin.site.register(Publisher, PublisherAdmin)
+
+class BookItemAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(BookItem, BookItemAdmin)
+
+
+class BookEditionAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(BookEdition, BookEditionAdmin)
+
+BookCategory
+class BookCategoryAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(BookCategory, BookCategoryAdmin)

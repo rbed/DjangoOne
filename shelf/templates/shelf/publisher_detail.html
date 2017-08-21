@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+Detale wydawców:
+<a href="{% url 'shelf:publisher-list' %}">Powrót do listy autorów</a>
+
+Autor: {{ object.name }}
+
+
+{% endblock %}
